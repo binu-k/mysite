@@ -9,3 +9,11 @@ def index(request):
     return render(request,'index.html',context=context)
 
 
+def image(request):
+
+   
+    
+    return render(request,'image.html')
+
+
+
