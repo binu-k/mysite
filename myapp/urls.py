@@ -1,12 +1,14 @@
 
 from django.urls import path,include
 
-from .views import index,image
+from .views import index,product,product_details
 
 
 
 urlpatterns = [
     
     path('',index,name='index page'),
-    path('image/',image,name='image'),
+    path('product/',product,name='product'),
+    path('product/<int:id>',product_details,name='product_details'),
+
 ]

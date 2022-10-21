@@ -1,15 +1,19 @@
 {% load tailwind_tags %}
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    {% tailwind_css%}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% tailwind_css %}
+
 </head>
 <body>
-  <div class="navbar bg-base-300 drop-shadow-md ">
+
+<!-- Navbar -->
+
+<div class="navbar bg-base-300 drop-shadow-md ">
     <div class="flex-1">
       <a class="btn btn-ghost normal-case text-xl">E-commerce</a>
     </div>
@@ -51,23 +55,32 @@
      
     </div>
   </div>
- 
-  <!-- Hero -->
 
-  <div class="hero min-h-" style="background-image: url(https://placeimg.com/1000/800/arch);">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">Welcome to E-commerce Website</h1>
-        <br>
-        <br>
-        <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        <br>
-        <br>
-       
+<!-- Cards  -->
+
+{% for p in product %}
+
+<a href="http://127.0.0.1:8000/product/{{p.id}}">
+
+<div class="card w-96 bg-base-100 shadow-xl mt-3">
+    <figure class="px-10 pt-10">
+      <img src="{{p.image.url}}" alt="Shoes" class="rounded-xl" />
+    </figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">{{p.name}}</h2>
+      <h2 >{{p.price}}</h2>
+      <p>{{p.description}}</p>
+      <div class="card-actions">
+        <button class="btn btn-primary">Buy Now</button>
       </div>
     </div>
   </div>
 
+</a>
+  {%endfor%}
+
+
+
+</div>
 </body>
 </html>
