@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<div class="text-xl text-center font-bold">Seller information</div>
+<div class="flex p-10 w-full h-200 bg-purple-50">
+    <div class="w-2/3 text-xl ml-10 font-semibold">
+        <div class="mt-10 text-sky-700">ID : {{seller.id}}</div>
+        <div class="mt-10 text-blue-400">Name : {{seller.username}}</div>
+        <div class="mt-10 text-green-400">Seller contact : {{profile.contact_number}}</div>             {% comment %} or seller.profile.contact_number,, same as below {% endcomment %}
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

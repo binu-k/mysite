@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+<form style="position:relative; left: 450px; margin-top: 2%;" action="" method="POST" enctype="multipart/form-data" class='card-body w-2/6 shadow-2xl m-10 p-10'>
+    {% csrf_token %}
+    <h1 class="text-2xl font-bold mb-10 text-yellow-500" >✏️ Update Product</h1>
+    <div class="mb-5">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Product Name</label>
+        <input class="input input-bordered w-full max-w-xs" type="text" name="name" id="name" value="{{p.name}}" placeholder="Name">
+    </div>
+
+    <div class="mb-5">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Product Price</label>
+        <input class="input input-bordered w-full max-w-xs" type="text" name="price" id="price" value="{{p.price}}" placeholder="price" >
+    </div>
+
+    <div class="mb-5">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Product Description</label>
+        <input class="input input-bordered w-full max-w-xs" type="text" name="desc" id="desc" value="{{p.description}}" placeholder="Description">
+    </div>
+
+    {% if p.image %}
+        <div class="mb-5">
+            <label class="block text-grey-700 text-sm font-bold mb-2">Product image</label>
+            <img class="w-36 mb-2 rounded-lg" src="{{p.image.url}}" alt="image not found">
+            <input type="file" name="upload" id="upload">
+        </div>
+    {% else %}
+    <div class="mb-6">
+        <label for="">Product Image</label>
+        <img class="w-36 mb-2 rounded-lg" src="" alt="Currently no image added">
+        <input type="file" name="upload" id="upload">
+    </div>
+    {% endif %}  
+         
+    <div >
+        <input style="position:relative; left: 125px; margin-top: 3%;" class="focus:outline-none text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 w-2/5" type="submit" accept="image/*" name="Update Product" value="Update Product">
+    </div>
+</form>
+
+
+
+{% endblock %}
+
+
+

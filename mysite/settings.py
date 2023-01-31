@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'users',
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+import os
+STATIC_FILES_DIR=[
+    os.path.join(BASE_DIR,'mysite/static'),
+]
 STATIC_URL = 'static/'
 # Base url to serve media files
 MEDIA_URL = '/media/'

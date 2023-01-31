@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+<form style="position:relative; left: 470px; margin-top: 2%;" action="" method="POST" enctype="multipart/form-data" class='card-body w-2/6 shadow-2xl m-10 p-10'>
+    {% csrf_token %}
+    <h1 class="text-2xl font-bold mb-10 text-green-500" >➕ Create Profile</h1>
+    <div class="mb-6">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Contact Number</label>
+        <input class="input input-bordered w-full max-w-xs" type="text" name="contact_number" id="contact_number" placeholder="contact_number">
+    </div>
+    <div class="mb-6">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Image</label>
+        <input type="file" name="upload" id="upload">
+    </div>
+    <div >
+        <input style="position:relative; left: 125px; margin-top: 3%;" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg  px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 w-2/5" type="submit" accept="image/*" name="Create Profile" value="Create Profile">
+    </div>
+</form>
+
+  
+
+
+{% endblock %}

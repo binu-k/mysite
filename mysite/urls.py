@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 
-from myapp.views import index,product
+from myapp.views import index,products
 from mysite import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('myapp.urls')),
+    path('users/',include('users.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     
     
